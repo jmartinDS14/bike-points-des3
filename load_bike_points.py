@@ -17,9 +17,9 @@ def load_bikes():
     )
 
     try:
-        file = os.listdir('data')[1]
-        filename = 'data/'+file
-        s3file= 'bike-point/'+file
+        file = [f for f in os.listdir('data') if f.endswith('.json')]
+        filename = 'data/'+file[0]
+        s3file= 'bike-point/'+file[0]
         try:
             s3_client.upload_file(filename,bucket,s3file)
             print('Upload successful')
