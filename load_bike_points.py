@@ -17,7 +17,7 @@ def load_bikes():
     )
 
     try:
-        file = os.listdir('data')[0]
+        file = os.listdir('data')[1]
         filename = 'data/'+file
         s3file= 'bike-point/'+file
         try:
